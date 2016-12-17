@@ -1,11 +1,23 @@
-
-
 var i = 1; 
 var squareCount = 16;
 
+function rgbColor() {
+	var letters = "ABCDF0123456789".split("");
+	
+	rng = []
+	for (i=0; i < 6; i++) {
+		random = Math.floor(Math.random() * 10);
+		rng.push(letters[random]);
+	}
+	rng = "#" + rng.join("");
+	return rng;
+}
+
+rgbColor();
+
+
 function newGrid(squareCount) {
 	
-
 	var container = document.createElement('div');
 	squareCount = squareCount * squareCount
 
@@ -18,19 +30,15 @@ function newGrid(squareCount) {
 		square.style.width = size + "px";
 		square.style.height = size + "px";
 		square.addEventListener("mouseleave", function() {
-			this.style.backgroundColor = "blue";
+			this.style.backgroundColor = rgbColor();
 		});
 
-		console.log(square + i);
 		container.appendChild(square);
 	}
 	document.getElementById("wrapper").appendChild(container);
-	
-	
 }; 
 
 newGrid(squareCount);
-
 
 function newUserGrid() {
 	document.getElementById("wrapper").innerHTML= " ";
@@ -38,14 +46,3 @@ function newUserGrid() {
 	newGrid(squareCount)
 
 };
-
-
-
-//hover effect 
-//1. setup eventListener that responds to mouseleave/mouseenter
-//- check reference 
-//- write correct code 
-//2. write a method that changes square's color on mouseleave
-
-
-
