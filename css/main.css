@@ -1,9 +1,10 @@
 .square-container {
 	margin: 0 auto;
 	background-color: #ccc;
-	width: calc(16*22px);
-	height: calc(16*22px);
-	border: 1px solid #000;
+	width: calc(400px);
+	height: calc(400px);
+	border: 0px solid #000;
+
 }
 
 #wrapper {
@@ -12,10 +13,9 @@
 
 
 .square {
-	display: inline-block;
+	float: left;
 	margin: 0;
-	width: 20px;
-	height: 20px;
+
 	background-color: #fff;
 	border: 1px solid #000;
 }

@@ -1,22 +1,45 @@
-var container = document.createElement('div');
-container.setAttribute("class", "square-container");
+
 
 var i = 1; 
+var squareCount = 16;
 
-for (var i=1; i <= 16*16; i++) { 
-	var square = document.createElement('div');
-	square.setAttribute("class", "square");
+function newGrid(squareCount) {
+	
 
-	square.addEventListener("mouseleave", function() {
-		this.style.backgroundColor = "blue";
-	});
+	var container = document.createElement('div');
+	squareCount = squareCount * squareCount
 
-	console.log(square + i);
-	container.appendChild(square);
+	container.setAttribute("class", "square-container");
 
-}
+	for (var i=1; i <= squareCount; i++) { 
+		var square = document.createElement('div');
+		square.setAttribute("class", "square");
+		size = (400 / Math.sqrt(squareCount)) - 2;
+		square.style.width = size + "px";
+		square.style.height = size + "px";
+		square.addEventListener("mouseleave", function() {
+			this.style.backgroundColor = "blue";
+		});
 
-document.getElementById("wrapper").appendChild(container);
+		console.log(square + i);
+		container.appendChild(square);
+	}
+	document.getElementById("wrapper").appendChild(container);
+	
+	
+}; 
+
+newGrid(squareCount);
+
+
+function newUserGrid() {
+	document.getElementById("wrapper").innerHTML= " ";
+	 squareCount = prompt("How many squares per side would you like for your shiny new grid? Provide a number!")
+	newGrid(squareCount)
+
+};
+
+
 
 //hover effect 
 //1. setup eventListener that responds to mouseleave/mouseenter
