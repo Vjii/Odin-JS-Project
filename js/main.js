@@ -36,7 +36,6 @@ function newGrid(squareCount) {
 			if (track.includes(this) === true) {
 				y -= 10;
 				this.style.filter = "brightness(" + y + "%)";
-				alert(y);
 			}
 
 			track.push(this);
@@ -44,15 +43,16 @@ function newGrid(squareCount) {
 
 		container.appendChild(square);
 	}
-	document.getElementById("wrapper").appendChild(container);
+	document.getElementById("grid-container").appendChild(container);
 }; 
 
 newGrid(squareCount);
 
-
 function newUserGrid() {
-	document.getElementById("wrapper").innerHTML= " ";
-	var squareCount = prompt("How many squares per side would you like for your shiny new grid? Provide a number!")
+	document.getElementById("grid-container").innerHTML= " ";
+	
+	var squareCount = prompt("How many squares per side would you like for your shiny, new grid? Provide a number!")
 	newGrid(squareCount)
+	console.log(squareCount);
 
 };

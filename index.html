@@ -10,11 +10,20 @@
 
 </head>
 <body>
-
-	<button type="submit" onclick="newUserGrid();">
-		Create new grid 
+	<header class="heading-container">
+		<div class="heading"></div>
+		<h1>Etch-a-sketch</h1>
+		<ul class="description">
+			<li>Javascript-generated grid of even boxes.</li>
+			<li>Random-colored trail effect on mouse hover.</li>
+			<li>Each subsequent mouse hover over the same square makes it 10% darker, 10 passes make the square black.</li>
+		</ul>
+		<h2>Click the "New grid" button to reset the grid and create a new one with the size of your choice.</h2>
+	</header>
+	<button class="button" type="submit" onclick="newUserGrid();">
+		New grid
 	</button>
-	<div id="wrapper">
+	<div id="grid-container">
 	</div>
 	
 <script src="js/main.js"></script>

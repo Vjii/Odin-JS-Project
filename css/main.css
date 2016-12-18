@@ -1,16 +1,54 @@
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #003;
+}
+
+.heading-container {
+	color: #fff;
+	background-color: #000;
+	margin: 0;
+	padding: .05em 1em;
+	box-shadow: 0 5px 5px 0;
+}
+
+#grid-container {
+	padding: 2em;
+	margin: 2em auto;
+}
+
+.heading { 
+	margin: 0 auto;
+ }
+
+.description {
+	padding: 0 1em;
+	font-size: 1.25em;
+}
+
 .square-container {
 	margin: 0 auto;
 	background-color: #ccc;
 	width: calc(400px);
 	height: calc(400px);
 	border: 0px solid #000;
-
 }
 
-#wrapper {
- 	padding: 15%;
+ .button {
+  font-family: Open Sans;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  margin: 2em auto;
+  
+  display: block;
 }
-
 
 .square {
 	float: left;
