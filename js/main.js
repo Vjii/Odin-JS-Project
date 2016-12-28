@@ -19,7 +19,7 @@ function newGrid(squareCount) {
 	squareCount = squareCount * squareCount
 
 	container.setAttribute("class", "square-container");
-	var y = 100;
+
 	var track = [];
 	squareIndex = 0;
 	for (var i=1; i <= squareCount; i++) { 
@@ -34,7 +34,17 @@ function newGrid(squareCount) {
 			this.style.backgroundColor = rngColor();			
 			
 			if (track.includes(this) === true) {
-				y -= 10;
+				
+				  var count = 0;
+					for(var i = 0; i < track.length; ++i){
+					    if(track[i] === this) {
+					        count++;
+					      
+
+				      }
+				      y = 100 - count*10; 
+				      console.log(y);
+					}
 				this.style.filter = "brightness(" + y + "%)";
 			}
 
@@ -53,6 +63,5 @@ function newUserGrid() {
 	
 	var squareCount = prompt("How many squares per side would you like for your shiny, new grid? Provide a number!")
 	newGrid(squareCount)
-	console.log(squareCount);
 
 };
